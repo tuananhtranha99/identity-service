@@ -8,6 +8,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 
 @Data
@@ -16,14 +17,8 @@ import java.util.Set;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-public class User {
+public class InvalidatedToken {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     String id;
-    String username;
-    String password;
-    String firstName;
-    String lastName;
-    LocalDate dob;
-    Set<String> roles;
+    Date expiryTime;
 }
